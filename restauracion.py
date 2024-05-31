@@ -9,7 +9,7 @@ def respaldo():
         nombre_db = input("Ingrese el nombre de la base de datos a respaldar: ")
         archivo_respaldo = input("Ingrese el nombre para el archivo.sql (ubique el '.sql' al final): ")
         
-        with open(f'F:/respaldo/{archivo_respaldo}', 'w') as out:
+        with open(f'C:/Respaldos/{archivo_respaldo}', 'w') as out:
             subprocess.Popen(f'pg_dump --username {usuario} --dbname {nombre_db}', shell=True, stdout=out)
             time.sleep(15)
 

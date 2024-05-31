@@ -4,7 +4,7 @@ HOST = 'localhost'
 
 conexion = psycopg2.connect(
         user="postgres",
-        password="123456",
+        password="mendoza",
         host="localhost",
         port="5432"
     )
@@ -148,9 +148,9 @@ def obtenerRoles():
 
 def procedimientosAlmacenados():
     conexion = psycopg2.connect(
-        dbname='bomberos_db',
+        dbname='bomberos.db',
         user='postgres',
-        password='123456',
+        password='mendoza',
         host='localhost'
     )
     try:

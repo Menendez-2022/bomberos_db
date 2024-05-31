@@ -1,16 +1,16 @@
 import psycopg2
 from fpdf import FPDF
 
-conexion = psycopg2.connect(
-    dbname="bomberos_db",
-    user="postgres",
-    password="123456",
-    host="localhost",
-    port="5432"
-)
 
 def ejecutar(): 
     try: 
+        conexion = psycopg2.connect(
+            dbname="bomberos.db",
+            user="postgres",
+            password="mendoza",
+            host="localhost",
+            port="5432"
+        )
         cursor = conexion.cursor()
         consulta = f"""SELECT table_name 
                         FROM information_schema.tables 
@@ -29,6 +29,13 @@ def ejecutar():
 
 def atributos(table):
     try: 
+        conexion = psycopg2.connect(
+            dbname="bomberos.db",
+            user="postgres",
+            password="mendoza",
+            host="localhost",
+            port="5432"
+        )
         cursor = conexion.cursor()
         consulta = f"""SELECT column_name                  
                         FROM information_schema.columns     
@@ -46,6 +53,13 @@ def atributos(table):
 
 def reporte(table):
     try: 
+        conexion = psycopg2.connect(
+            dbname="bomberos.db",
+            user="postgres",
+            password="mendoza",
+            host="localhost",
+            port="5432"
+        )
         cursor = conexion.cursor()
         columnas = input('Ingrese las columnas con las que quiere generar un reporte (separe los atributos con una coma): ')
 
